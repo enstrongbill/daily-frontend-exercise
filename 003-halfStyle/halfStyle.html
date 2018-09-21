@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>halfstyle</title>
+    <style>
+        .halfstyle{
+            font-size: 250px;
+            font-weight: bold;
+            color: blue;
+            position: relative;
+            display: inline-block;
+            overflow: hidden;
+        }
+        .halfstyle:before{
+            content: attr(data-text);
+            position: absolute;
+            top: 0;
+            width: 50%;
+            color: yellowgreen;
+            overflow: hidden;
+            /* 让字体变得可选 */
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body>
+    <span data-text="o" class="halfstyle">o</span>
+</body>
+</html>
