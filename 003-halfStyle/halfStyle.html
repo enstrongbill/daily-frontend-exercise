@@ -13,8 +13,10 @@
             position: relative;
             display: inline-block;
             overflow: hidden;
+            white-space: pre;
         }
         .halfstyle:before{
+            /* 动态的获取到数值 */
             content: attr(data-text);
             position: absolute;
             top: 0;
