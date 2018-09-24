@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ablum</title>
+    <style>
+        body {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #ccc;
+
+        }
+
+        .ablum {
+            width: 10em;
+            height: 10em;
+            border-radius: 1em;
+            background: #eee;
+            display: flex;
+            justify-content: center;
+            position: relative;
+            padding: 1em;
+            box-sizing: border-box;
+
+        }
+
+        .ablum span {
+            width: 22.5%;
+            height: 37.5%;
+            border-radius: 1em;
+            background: #ee0000;
+            height: 4em;
+            position: absolute;
+            transform-origin:center 105% ;
+            transform: rotate(calc((var(--n) - 1) * 45deg));
+            /* mix-blend-mode: multiply; */
+        }
+
+        .ablum:hover span {
+            animation: move 2s;
+        }
+
+        .ablum span:nth-child(1) {
+            --n: 1;
+        }
+
+        .ablum span:nth-child(2) {
+            --n: 2;
+        }
+
+        .ablum span:nth-child(3) {
+            --n: 3;
+        }
+
+        .ablum span:nth-child(4) {
+            --n: 4;
+        }
+
+        .ablum span:nth-child(5) {
+            --n: 5;
+        }
+
+        .ablum span:nth-child(6) {
+            --n: 6;
+        }
+
+        .ablum span:nth-child(7) {
+            --n: 7;
+        }
+
+        .ablum span:nth-child(8) {
+            --n: 8;
+        }
+
+        @keyframes move {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(calc((var(--n) - 1) * 45deg));
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="ablum">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</body>
+
+</html>
