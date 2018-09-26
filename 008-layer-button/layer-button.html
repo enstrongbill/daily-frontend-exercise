@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>layer-button</title>
+    <style>
+        body{
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: lightyellow;
+        }
+        nav ul{
+            padding: 0;
+            list-style: none;
+        }
+        nav ul li{
+            width: 8em;
+            height: 2em;
+            font-size: 25px;
+            text-align: center;
+            line-height: 2em;
+            font-family: sans-serif;
+            text-transform: capitalize;
+            position: relative;
+            margin: 0.8em;
+        }
+        nav li::before, nav li::after{
+            content: '';
+            position: absolute;
+            width: 0.6em;
+            height: 0.6em;
+            background: gainsboro;
+            border-radius: 50%;
+        }
+        nav ul li::before{
+            top: calc(50% - 0.6em / 2);
+            left: 0;
+        }
+        nav ul li::after{
+            top: calc(50% - 0.6em / 2);
+            right: 0;
+        }
+        nav li:hover::before{
+            z-index: -1;
+            top: 0;
+            background: dodgerblue;
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+        }
+        nav li:hover::after{
+            z-index: -2;
+            bottom: -0.4em;
+            right: -0.4em;
+            background: dodgerblue;
+            filter: brightness(0.8);
+            width: 100%;
+            height: 100%;
+            border-radius: 0;
+        }
+        nav li:hover{
+            color: white;
+        }
+        nav li{
+            -webkit-transition: 0.5s;
+            -moz-transition: 0.5s;
+            transition: 0.5s;
+        }
+        /* 形成一种冲出去又拖回来的效果 */
+        nav li::before,nav li::after{
+            transition: 0.5s cubic-bezier(0.5, -0.5, 0.25, 1.5);
+        }
+        
+    </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li>home</li>
+            <li>manga</li>
+            <li>film</li>
+            <li>picture</li>
+        </ul>
+    </nav>
+</body>
+</html>
