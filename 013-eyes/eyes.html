@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>eyes</title>
+    <style>
+        body{
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: black;
+        }
+        .eyes{
+            width: 40em;
+            height: 10em;
+            font-size: 10px;
+            position: relative;
+        }
+        /* 眼睛整体的制作，它这里是利用的是border的边框来制作出来的，
+        而不是由两个物体通过定位叠加制作出来的，这里超级厉害 */
+        .eyes div{
+            width: 15em;
+            height: 10em;
+            border:solid  white;
+            border-width:0 5em;
+            box-sizing: border-box;
+            animation: blink 2s linear infinite;
+        }
+        .eyes .left{
+            position: absolute;
+            left: 0;
+            border-radius: 0 50%;
+            transform: rotate(15deg);
+        }
+        .eyes .right{
+            position: absolute;
+            right: 0;
+            border-radius: 50% 0;
+            transform: rotate(-15deg);
+        }
+        /* 眼睛眨眼的动画 */
+        @keyframes blink{
+            40%, 60%{
+                border-width: 0 5em;
+            }
+            50%{
+                border-width: 0 7.5em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="eyes">
+        <div class="left"></div>
+        <div class="right"></div>
+    </div>
+</body>
+</html>
