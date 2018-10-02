@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>waves</title>
+    <style>
+        html, body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            background: linear-gradient(antiquewhite, navajowhite);
+        }
+        /* 大海背景的制作 */
+        .sea{
+            width: 300px;
+            height: 300px;
+            background-color: whitesmoke;
+            background-image: linear-gradient(
+                darkblue,
+                rgba(255, 255, 255, 0) 75%
+            );
+            border-radius: 50%; 
+            box-shadow: 0 2px 30px rgba(0, 0, 0, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        .sea .title{
+            color: white;
+            font-size: 24px;
+            font-family: sans-serif;
+            text-align: center;
+            line-height: 250px;
+            text-transform: uppercase;
+            letter-spacing: .4em;
+            position: absolute;
+            z-index: 1;
+            width: 100%;
+        }
+        /* 大海波浪的制作，利用border-radius来制作 */
+        .sea .wave{
+            position: absolute;
+            width: 500px;
+            height: 500px;
+            border-radius: 43% 40%;
+            top: -250px;
+            left: calc((300px - 500px) / 2);
+            animation: wave linear infinite;
+            transform-origin: 50% 48%;
+        }
+        /* 这里之所以不用animation-delay是因为在开始的几秒内感觉只有一个在动，
+        效果很不好 */
+        .sea .wave:nth-of-type(1),
+        .sea .wave:nth-of-type(2){
+            background-color: deepskyblue;
+            animation-duration: 5s;
+            filter: opacity(.4em);
+        }
+        .sea .wave:nth-of-type(2){
+            animation-duration: 7s;
+            
+        }
+        .sea .wave:nth-of-type(3){
+            background-color: orangered;
+            filter: opacity(.1);
+            animation-duration: 9s;
+        }
+        /* 大海动画的制作,跟017的史莱姆的动画做法差不多
+        这里的rotate(360deg)也可以写成rotate(1turn) */
+        @keyframes wave{
+            from{
+                transform: rotate(360deg);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="sea">
+        <p class="title">三叉树先生</p>
+        <span class="wave"></span>
+        <span class="wave"></span>
+        <span class="wave"></span>
+    </div>
+</body>
+</html>
