@@ -10,3 +10,4 @@
 3. [coden](https://codepen.io/)
 4. [前端每日实战](https://segmentfault.com/blog/comehope)
 5. [css3patterns](http://lea.verou.me/css3patterns/)
+6. [animate.css](https://github.com/daneden/animate.css)
