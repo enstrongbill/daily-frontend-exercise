@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>waiting</title>
+    <style>
+        body{
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: aqua;
+        }
+        .container{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .container span{
+            width: 5vw;
+            height: 20vh;
+            background: blue;
+            margin-right: 10px;
+            transition: .5s;
+            border-radius: 2vw;
+            animation: move 1s infinite alternate-reverse;
+            animation-delay: calc((var(--n) - 1) * 0.1s);
+            
+        }
+        
+        .container span:nth-child(1){
+            --n: 1;
+        }
+        .container span:nth-child(2){
+            --n: 2;
+        }
+        .container span:nth-child(3){
+            --n: 3;
+        }
+        .container span:nth-child(4){
+            --n: 4;
+        }
+        .container span:nth-child(5){
+            --n: 5;
+        }
+        @keyframes move{
+            100%{
+                /* height: calc((var(--n) * 2vh) + 35vh); */
+                height: 35vh;
+                /* transform: scale(2); */
+                
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</body>
+</html>
