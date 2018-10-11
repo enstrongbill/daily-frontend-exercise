@@ -11,3 +11,4 @@
 4. [前端每日实战](https://segmentfault.com/blog/comehope)
 5. [css3patterns](http://lea.verou.me/css3patterns/)
 6. [animate.css](https://github.com/daneden/animate.css)
+7. [ihover.css](http://gudh.github.io/ihover/dist/index.html)
