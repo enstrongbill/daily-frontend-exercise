@@ -13,8 +13,7 @@
             align-items: center;
             justify-content: center;
         }
-    </style>
-    <style>
+        /* background-size的设置很重要，不然后面就没有背景的渐变了 */
         .amoeba {
             width: 25vw;
             height: 42vw;
@@ -31,7 +30,8 @@
             animation: morph 10s ease-in-out infinite alternate,
                        change 20s linear infinite alternate;
         }
-
+        /* 变形虫的动画通过利用border-radius来实现，
+        /前面的是x的距离，后面是y的距离，若是xy都一样，那就只写前面 */
         @keyframes morph {
             0%,
             100% {
@@ -50,7 +50,8 @@
                 border-radius: 40% 60% 42% 58% / 41% 51% 49% 59%;
             }
         }
-
+        /* 利用background-position来实现背景图片的变化，
+        有时也拿它来做雪碧图动画 */
         @keyframes change {
 
             100% {
