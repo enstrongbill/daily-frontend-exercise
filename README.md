@@ -2,6 +2,7 @@
 ## This project is used to record some front-end effects and interview questions which encounter in learning
 ## 这个项目是用于记录一些学习时候遇到的有趣的前端特效和面试题
 ## 前端特效大多是重构了codepen中的代码
+## 每个前端特效有多种实现方式，这里并的代码并不是最优的，并没有兼容各种设备，考虑最优性能等，这里只是提供一种解决问题的思路
 ## 面试题是不分初中高级面试题的[个人水平有限，无法分辨出]，只要有趣就记录
 
 主要来源(感谢以下书籍或是网站给予个人的帮助)
