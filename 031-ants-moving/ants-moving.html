@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>ants-moving</title>
+    <style>
+        body{
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        /* 用一张白色的背景图来遮住真正的渐变的黑色背景图 */
+        .ants{
+            line-height: 100px;
+            text-align: center;
+            padding:0 30px;
+            font-size: 50px;
+            border: 4px solid transparent;
+            background: linear-gradient(white, white) padding-box,
+                        repeating-linear-gradient(-45deg, black 0, black 25%, transparent 0, transparent 50%);
+            background-size: .5em .5em;
+            animation: moving 8s linear infinite;
+        }
+        @keyframes moving{
+            to{
+                background-position: 100% 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="ants">mr3x</div>
+</body>
+</html>
