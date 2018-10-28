@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>static-rotate</title>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .path {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: blue;
+        }
+
+        .avatar {
+            width: 50px;
+            margin: 0 auto;
+            border-radius: 50%;
+            animation: spin 3s infinite linear;
+            transform-origin: center 150px;
+        }
+
+        .avatar>.logo {
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            font-size: 1.5em;
+            text-align: center;
+            border-radius: 50%;
+            display: block;
+            background: #58a;
+            color: white;
+            animation: inherit;
+            animation-direction: reverse;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(1turn);
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="path">
+        <div class="avatar">
+            <div class="logo">mr3x</div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>
