@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>abstract-flower</title>
+    <style>
+        body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+    <!-- viewbox相当于是把截屏的窗口放在viewport上显示 -->
+    <svg width="320" height="320" viewBox="0 0 320 320" fill="none">
+        <!-- 这里的defs相当于是模版的意思，并不会在页面中显示，
+            这里的values里的路径值是用的是小m(相对路径的意思) ,相对前一个点
+            这里的begin相当于css3中的animation-delay，延迟函数的意思，
+            svg中的延迟函数相比css3厉害的地方是，svg中可以这样子写begin:click+1s,
+            元素点击后的1秒才执行，svg称这数值为event value-->
+        <defs>
+            <path id="c1" stroke="red">
+                <animate id="p1" attributeName="d" values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0" dur="6s"
+                    repeatCount="indefinite" />
+                <animate attributeName="stroke-width" values="0;4;4;0" dur="6s" repeatCount="indefinite" begin="p1.begin" />
+            </path>
+            <path id="c2" stroke="yellow">
+                <animate attributeName="d" values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0" dur="6s"
+                    repeatCount="indefinite" begin="p1.begin+1s" />
+                <animate attributeName="stroke-width" values="0;4;4;0" dur="6s" repeatCount="indefinite" begin="p1.begin+1s" />
+            </path>
+            <path id="c3" stroke="blue">
+                <animate attributeName="d" values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0" dur="6s"
+                    repeatCount="indefinite" begin="p1.begin+2s" />
+                <animate attributeName="stroke-width" values="0;4;4;0" dur="6s" repeatCount="indefinite" begin="p1.begin+2s" />
+            </path>
+            <path id="c4" stroke="green">
+                <animate id="p1" attributeName="d" values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0" dur="6s"
+                    repeatCount="indefinite" begin="p1.begin+3s" />
+                <animate attributeName="stroke-width" values="0;4;4;4;0" dur="6s" repeatCount="indefinite" begin="p1.begin+3s" />
+            </path>
+            <path id="c5" stroke="purple">
+                <animate attributeName="d" values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0" dur="6s"
+                    repeatCount="indefinite" begin="p1.begin+4s" />
+                <animate attributeName="stroke-width" values="0;4;4;0" dur="6s" repeatCount="indefinite" begin="p1.begin+4s" />
+            </path>
+            <path id="c6" stoke="pink">
+                <animate attributeName="d" values="m160,160l0,0 0,0;m130,110l30,-17 30,17;m130,60l30,-17 30,17;m160,20l0,0 0,0" dur="6s"
+                    repeatCount="indefinite" begin="p1.begin+5s" />
+                <animate attributeName="stroke-width" values="0;4;4;4;0" dur="6s" repeatCount="indefinite" begin="p1.begin+5s" />
+            </path>
+        </defs>
+        <!-- 每个花朵由6个6边形组成，每个6边形由6个折角形成，
+            use相当于是复制元素的意思(用xlink:href来指定复制的元素), -->
+        <use xlink:href="#c1" />
+        <use xlink:href="#c1" transform="rotate(60 160 160)" />
+        <use xlink:href="#c1" transform="rotate(120 160 160)" />
+        <use xlink:href="#c1" transform="rotate(180 160 160)" />
+        <use xlink:href="#c1" transform="rotate(240 160 160)" />
+        <use xlink:href="#c1" transform="rotate(300 160 160)" />
+    
+        <use xlink:href="#c2" transform="rotate(30 160 160)" />
+        <use xlink:href="#c2" transform="rotate(90 160 160)" />
+        <use xlink:href="#c2" transform="rotate(150 160 160)" />
+        <use xlink:href="#c2" transform="rotate(210 160 160)" />
+        <use xlink:href="#c2" transform="rotate(270 160 160)" />
+        <use xlink:href="#c2" transform="rotate(330 160 160)" />
+    
+        <use xlink:href="#c3" />
+        <use xlink:href="#c3" transform="rotate(60 160 160)" />
+        <use xlink:href="#c3" transform="rotate(120 160 160)" />
+        <use xlink:href="#c3" transform="rotate(180 160 160)" />
+        <use xlink:href="#c3" transform="rotate(240 160 160)" />
+        <use xlink:href="#c3" transform="rotate(300 160 160)" />
+    
+        <use xlink:href="#c4" transform="rotate(30 160 160)" />
+        <use xlink:href="#c4" transform="rotate(90 160 160)" />
+        <use xlink:href="#c4" transform="rotate(150 160 160)" />
+        <use xlink:href="#c4" transform="rotate(210 160 160)" />
+        <use xlink:href="#c4" transform="rotate(270 160 160)" />
+        <use xlink:href="#c4" transform="rotate(330 160 160)" />
+        <use xlink:href="#c5" />
+        <use xlink:href="#c5" transform="rotate(60 160 160)" />
+        <use xlink:href="#c5" transform="rotate(120 160 160)" />
+        <use xlink:href="#c5" transform="rotate(180 160 160)" />
+        <use xlink:href="#c5" transform="rotate(240 160 160)" />
+        <use xlink:href="#c5" transform="rotate(300 160 160)" />
+    
+        <use xlink:href="#c6" transform="rotate(30 160 160)" />
+        <use xlink:href="#c6" transform="rotate(90 160 160)" />
+        <use xlink:href="#c6" transform="rotate(150 160 160)" />
+        <use xlink:href="#c6" transform="rotate(210 160 160)" />
+        <use xlink:href="#c6" transform="rotate(270 160 160)" />
+        <use xlink:href="#c6" transform="rotate(330 160 160)" />
+    </svg>
+    
+</body>
+</html>

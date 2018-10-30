@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>static-rotate</title>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background: wheat;
+        }
+
+        .avatar {
+            width: 50px;
+            margin: 0 auto;
+            border-radius: 50%;
+            animation: spin 3s infinite linear;
+            transform-origin: center 150px;
+        }
+/* 若是内部的图像层懒得写多一个反向动画，
+可以直接使用animation-direction: reverse;来实现 */
+        .avatar > .logo {
+            width: 80px;
+            height: 80px;
+            line-height: 80px;
+            font-size: 1.5em;
+            text-align: center;
+            border-radius: 50%;
+            display: block;
+            background: #58a;
+            color: white;
+            animation: inherit;
+            animation-direction: reverse;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(1turn);
+            }
+        }
+    </style>
+</head>
+
+<body>
+<!-- 为了让图像进行外部旋转，而内部不进行旋转，需要在图像层外面加多一层，
+然后内层和外层运动相反来相互抵消
+要用avatar来做外层，logo是图像层 -->
+    <div class="container">
+        <div class="avatar">
+            <div class="logo">mr3x</div>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

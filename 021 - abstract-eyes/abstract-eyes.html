@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>abstract-eyes</title>
+    <style>
+        body {
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            background: linear-gradient(floralwhite, wheat);
+        }
+
+        .eye {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cirque {
+            position: absolute;
+            border-radius: 50%;
+            border: .5em solid;
+            animation: spinX 3s linear infinite;
+            width: calc(2.125em * var(--index));
+            height: calc(2.125em * var(--index));
+            animation-delay: calc(var(--index) * 0.075s);
+        }
+        /* 眼睛动画的制作，最主要还是因为加了animation-delay */
+        @keyframes spinX {
+            0% {
+                transform: rotateX(0deg);
+            }
+            50% {
+                transform: rotateX(180deg);
+            }
+            100% {
+                transform: rotateX(-180deg);
+            }
+        }
+
+        span:nth-child(3n+1) {
+            border-color: #ff9966;
+        }
+
+        span:nth-child(3n+2) {
+            border-color: #996600;
+        }
+
+        span:nth-child(3n+3) {
+            border-color: #cccc00;
+        }
+
+        span:nth-child(1) {
+            --index: 1;
+
+        }
+
+        span:nth-child(2) {
+            --index: 2;
+
+        }
+
+        span:nth-child(3) {
+            --index: 3;
+
+        }
+
+        span:nth-child(4) {
+            --index: 4;
+
+        }
+
+        span:nth-child(5) {
+            --index: 5;
+
+
+        }
+
+        span:nth-child(6) {
+            --index: 6;
+        }
+
+        span:nth-child(7) {
+            --index: 7;
+
+        }
+
+        span:nth-child(8) {
+            --index: 8;
+        }
+
+        span:nth-child(9) {
+            --index: 9;
+
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="eye">
+        <span class="cirque"></span>
+        <span class="cirque"></span>
+        <span class="cirque"></span>
+        <span class="cirque"></span>
+        <span class="cirque"></span>
+        <span class="cirque"></span>
+        <span class="cirque"></span>
+        <span class="cirque"></span>
+        <span class="cirque"></span>
+    </div>
+    <div class="eye">
+        <span class="cirque"></span>
+        <span class="cirque"></span>
+        <span class="cirque"></span>
+        <span class="cirque"></span>
+        <span class="cirque"></span>
+        <span class="cirque"></span>
+        <span class="cirque"></span>
+        <span class="cirque"></span>
+        <span class="cirque"></span>
+    </div>
+</body>
+
+</html>

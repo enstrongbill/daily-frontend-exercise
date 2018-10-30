@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>sadman</title>
+    <style>
+        body{
+            background: radial-gradient(lightgray 20%, whitesmoke);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            padding: 0;
+            height: 100vh;
+        }
+        .man{
+            width: 12em;
+            height: 33em;
+            font-size: 10px;
+            position: relative;
+            color: white;
+        }
+        /* 头部的制作 */
+        /* currentColor是默认当前字体的颜色,css3中新加的属性 */
+        .head{
+            position: absolute;
+            width: 7em;
+            height: 7em;
+            background-color: currentColor;
+            border-radius: 50%;
+            right: 0;
+        }
+        /* 身体的制作 */
+        .body{
+            position: absolute;
+            top: 7em;
+            width: 6.2em;
+            height: 14.4em;
+            border-radius: 100% 20% 0 0;
+            background-color: currentColor;
+            animation: body-move 2s infinite;
+        }
+        .feet::before,
+        .feet::after{
+            content: '';
+            position: absolute;
+            width: 4em;
+            height: 1.4em;
+            bottom: 0;
+            left: -1.6em;
+            border-radius: 1em 80% 0.4em 0.4em;
+            background: currentColor;
+            animation: feet-move 2s infinite;
+        }
+        /* 延迟后脚的动画 */
+        .feet::after{
+            animation-delay: 1s;
+        }
+        /* 阴影的制作 */
+        .man::before{
+            content: '';
+            position: absolute;
+            width: 12em;
+            height: 0.8em;
+            background-color: rgba(0, 0, 0, 0.1);
+            bottom: -0.2em;
+            left: -3em;
+            border-radius: 50%;
+            animation: shadow-move 2s infinite;
+        }
+        /* 身体的动画 */
+        @keyframes body-move {
+            0%,  100% {
+                transform: translateY(0) skewX(0deg);
+            }
+
+            50%{
+                transform: translateY(0.5em) skewX(-2deg);
+            }
+        }
+        /* 脚的动画 */
+        @keyframes feet-move{
+            20%{
+                transform: translateX(3.4em) translateY(-1.6em) rotate(4deg);
+            }
+
+            30%{
+                transform: translateX(4.6em) translateY(-1em) rotate(0deg);
+            }
+
+            40%{
+                transform: translateX(5.6em) translateY(-0.6em) rotate(4deg);
+            }
+        }
+        /* 阴影的动画 */
+        @keyframes shadow-move{
+            0%, 100% {
+                transform: scale(1);
+            }
+
+            50%{
+                transform: scale(1.2)
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="man">
+        <div class="head"></div>
+        <div class="body"></div>
+        <div class="feet"></div>
+    </div>
+</body>
+</html>

@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>wheel</title>
+    <style>
+        body{
+            margin: 0;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(#555, #222);
+        }
+        /* 利用阴影来制作出轮子的外轮廓 */
+        .wheel{
+            width: 9em;
+            height: 9em;
+            font-size: 25px;
+            border: 0.4em solid #777;
+            border-radius: 50%;
+            box-shadow: 0 0 0 0.5em #111;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+        }
+        /* 利用linear-gradient来制作地面，
+        当一段渐变的结束和另外一段渐变的开始位置一样的时候是不会有渐变效果的 */
+        .wheel::before{
+            content: '';
+            position: absolute;
+            width: 15em;
+            height: 0.2em;
+            top: 11em;
+            background: linear-gradient(
+            to right,
+            silver 0, silver 4em,
+            transparent 4em, transparent 5em,
+            silver 5em, silver 10em,
+            transparent 10em, transparent 12em,
+            silver 12em, silver 14em,
+            transparent 14em, transparent 15em
+            );
+            background-position: 15em;
+            animation: move 6s linear infinite;
+        }
+        /* 车轮线条的制作 */
+        .wheel span{
+            position: absolute;
+            width: 8em;
+            height: 1em;
+            border: 0.1em solid;
+            border-color:#ccc transparent;
+            animation: run 3s linear infinite;
+            transform: rotate(calc((var(--n) - 1) * 30deg));
+            
+        }
+        .wheel span:nth-child(1){
+            --n: 1;
+        }
+        .wheel span:nth-child(2){
+            --n: 2;
+        }
+        .wheel span:nth-child(3){
+            --n: 3;
+        }
+        .wheel span:nth-child(4){
+            --n: 4;
+        }
+        .wheel span:nth-child(5){
+            --n: 5;
+        }
+        .wheel span:nth-child(6){
+            --n: 6;
+        }
+        /* 车轮线条动画 */
+        @keyframes run{
+            to{
+                transform: rotate(calc((var(--n) - 1) * 30deg + 360deg));
+            }
+        }
+        /* 地面的动画，跟利用雪碧图来制作动画的原理一样 */
+        @keyframes move{
+            to{
+                background-position: -15em;
+            }
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="wheel">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</body>
+</html>

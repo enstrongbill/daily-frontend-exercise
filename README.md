@@ -1,6 +1,5 @@
 ![](http://s16.sinaimg.cn/large/005PxX9dzy7oOeOGbjV8f&690)
 ## daily-frontend-exercise
----
 ### This project is used to record some front-end effects and interview questions which encounter in learning
 ### 这个项目是用于记录一些学习时候遇到的有趣的前端特效
 ### 前端特效大多是重构了codepen中的代码
@@ -9,7 +8,6 @@
 
 ## 主要来源
 ### 感谢以下书籍或是网站给予个人的帮助
----
 1. [css secrets](https://book.douban.com/subject/26295140/)
 2. [css 世界](https://book.douban.com/subject/27615777/)
 3. [svg动画](https://book.douban.com/subject/30239781/)

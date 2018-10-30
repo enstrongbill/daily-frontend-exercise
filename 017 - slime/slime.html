@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>slime</title>
+    <style>
+        body{
+            margin: 0;
+            height: 100vh;
+            background: black;
+        }
+        .slime{
+            width: 100vw;
+            height: 50vh;
+            background: lightcyan;
+            position: relative;
+            overflow: hidden;
+        }
+        /* 身体的制作，这里的border-radius和bottom设置很关键,
+        身体波浪动画效果成型的原因 */
+        .slime .body{
+            position: absolute;
+            width: 32vmin;
+            height: 32vmin;
+            background: teal;
+            border-radius: 43% 40% 43% 40%;
+            bottom: calc(-1 * 32vmin /2 - 4vmin);
+            left: -2vmin;
+            animation: 
+                wander 5s linear infinite alternate,
+                wave 3s linear infinite,
+                bounce 1s infinite alternate;
+        }
+        .slime .eyes{
+            width: 24vmin;
+            height: 5vmin;
+            position: absolute;
+            bottom: 2vmin;
+            left: calc(4vmin);
+            animation: wander 5s linear infinite alternate;
+        }
+        /* 眼睛的制作 */
+        .eyes::before,
+        .eyes::after{
+            content: '';
+            position: absolute;
+            width: 5vmin;
+            height: 5vmin;
+            border: 1.25vmin solid white;
+            box-sizing: border-box;
+            border-radius: 50%;
+            animation: blink 3s linear infinite;
+        }
+        .eyes::before{
+            left: 4vmin;
+        }
+        .eyes::after{
+            right: 4vmin;
+        }
+        /* 让史莱姆的身体动画更加真实 */
+        @keyframes bounce{
+            to{
+                bottom: calc(-1 * 32vmin / 2 - 2vmin);
+            }
+        }
+        /* 史莱姆身体的动画,因为他的身体设置了border-radius,
+        然后这里设置rotate,看上去好像波浪一样在动，这创意厉害
+        这里还可以直接使用border-radius,不用rotate都可以，可以
+        参考029-amoeba */
+        @keyframes wave{
+            to{
+                transform: rotate(360deg);
+            }
+        }
+        /* 史莱姆全局运动动画 */
+        @keyframes wander {
+            to{
+                left: calc(100vw - 32vmin);
+            }
+        }
+        /* 史莱姆眼睛的动画 */
+        @keyframes blink {
+            4%, 10%, 34%, 40%{
+                transform: scaleY(1);
+            }
+            7%, 37%{
+                transform: scaleY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="slime">
+        <span class="body"></span>
+        <span class="eyes"></span>
+    </div>
+</body>
+</html>

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>plane</title>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+            align-items: center;
+            justify-content: center;
+            background-color: #28505D;
+        }
+
+        .planePath {
+            stroke: #D9DADA;
+            stroke-width: .5%;
+            stroke-dasharray: 2% 2%;
+            stroke-linecap: round;
+            fill: none;
+        }
+    </style>
+</head>
+
+<body>
+    <svg viewBox="0 0 3387 1270">
+        <!-- 飞机的运动轨迹 -->
+        <path id="planePath" class="planePath" d="M-226 626c439,4 636,-213 934,-225 755,-31 602,769 1334,658 562,-86 668,-698 266,-908 -401,-210 -893,189 -632,630 260,441 747,121 1051,91 360,-36 889,179 889,179"
+        />
+        <!-- 飞机的制作，可以通过阿里矢量图标库来获取路径，
+            也可以通过ps或是ai来获取路径，看你自己喜欢 -->
+        <g id="plane">
+            <polygon points="-141,-10 199,0 -198,-72 -188,-61 -171,-57 -184,-57 " />
+            <polygon points="199,0 -141,-10 -163,63 -123,9 " />
+            <polygon points="-95,39 -113,32 -123,9 -163,63 -105,53 -108,45 -87,48 -90,45 -103,41 -94,41 " />
+            <polygon points="-83,28 -94,32 -65,31 -97,38 -86,49 -67,70 199,0 -123,9 -107,27 " />
+        </g>
+        <!-- 飞机的运动动画 -->
+        <!-- 这里记住要设置rotate="auto",若是不设置飞机是不会完美的跟着轨迹进行拐弯的 -->
+        <animateMotion xlink:href="#plane" dur="20s" repeatCount="indefinite"  rotate="auto">
+            <mpath xlink:href="#planePath" />
+        </animateMotion>
+    </svg>
+</body>
+
+</html>

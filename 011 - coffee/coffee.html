@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>coffee</title>
+    <style>
+        html, body{
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #cf9973;
+        }
+        .coffee{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 12em;
+            position: relative;
+        }
+        /* 咖啡杯子的制作 */
+        .coffee .cup{
+            width: 10em;
+            height: 9em;
+            background: white;
+            border-radius: 0 0 1.5em 1.5em;
+            position: relative;
+        }
+        /* 咖啡杯子顶部咖啡的制作 */
+        .coffee .cup::before{
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 2em;
+            background: chocolate;
+            border: 0.5em solid white;
+            box-sizing: border-box;
+            top: -1em;
+            box-shadow: inset 0 0 1em rgba(0, 0, 0, 0.5);
+        }
+        /* 咖啡杯子把手的制作 */
+        .coffee .cup::after{
+            content: '';
+            position: absolute;
+            width: 3em;
+            height: 3.5em;
+            border: 0.8em solid white;
+            border-radius: 50%;
+            top: 20%;
+            left: 80%;
+        }
+        /* 咖啡碟子的制作 */
+        .coffee .plate{
+            width: 16em;
+            height: 1em;
+            background: white;
+            border-radius: 0 0 50% 50%;
+            position: absolute;
+            bottom: 30px;
+        }
+        .coffee .vapor{
+            width: 7em;
+            height: 2em;
+            display: flex;
+            justify-content: space-between;
+            position: absolute;
+        }
+        /* 咖啡水蒸气的制作 */
+        .coffee .vapor span{
+            width: 0.1em;
+            min-width: 1px;
+            background: white;
+            filter: opacity(0);
+            animation: move 2s linear infinite;
+        }
+        /* 水蒸气延迟 */
+        .coffee .vapor span:nth-child(1){
+            animation-delay: 0.5s;
+        }
+        .coffee .vapor span:nth-child(2){
+            animation-delay: 0.1s;
+        }
+        .coffee .vapor span:nth-child(3){
+            animation-delay: 0.3s;
+        }
+        .coffee .vapor span:nth-child(4){
+            animation-delay: 0.3s;
+        }
+        /* 水蒸气关键帧动画的制作 */
+        @keyframes move{
+            from{
+                transform: tranlateY(0);
+                filter: opacity(1) blur(0.2em);
+            }
+            to{
+                transform: translateY(-4em);
+                filter: opacity(0) blur(0.4em);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="coffee">
+        <div class="cup"></div>
+        <div class="plate"></div>
+        <div class="vapor">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </div>
+</body>
+</html>

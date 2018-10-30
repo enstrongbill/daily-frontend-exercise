@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>cradle</title>
+    <style>
+        body{
+            height: 100vh;
+            margin: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: beige;
+        }
+        /* 钟摆架的制作 */
+        .cradle{
+            position: absolute;
+            display: flex;
+            font-size: 10px;
+            justify-content: space-between;
+            border: solid black;
+            border-width: .4em .1em 4em .1em;
+            padding: 0 4em 2em 4em;
+            width: 12em;
+        }
+        /* 钟摆绳的制作 */
+        .cradle span{
+            position: relative;
+            background: black;
+            width: .2em;
+            height: 10em;
+            transform-origin: top;
+        }
+        /* 钟摆球的制作 */
+        .cradle span::before{
+            content: '';
+            position: absolute;
+            bottom: 0;
+            background: black;
+            width: 3em;
+            height: 3em;
+            border-radius: 50%;
+            left: -1.5em;
+        }
+        /* alternate在奇数次正向播放，在偶数次反向播放
+        alternate-reverse和alternate是相反的
+        默认是正常播放normal的 */
+        .cradle span:first-child{
+            animation: moving-up 0.75s infinite alternate;
+            --direction: 1;
+        }
+        .cradle span:last-child{
+            animation: moving-up 0.75s infinite alternate-reverse;
+            --direction: -1;
+        }
+        /* 钟摆动画的制作 */
+        @keyframes moving-up{
+            0%{
+                transform: rotate(0deg);
+            }
+            50%{
+                transform: rotate(0deg);
+            }
+            100%{
+                transform: rotate(calc(45deg * var(--direction)));
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="cradle">
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</body>
+</html>
